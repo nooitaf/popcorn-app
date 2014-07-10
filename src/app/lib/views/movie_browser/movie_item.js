@@ -18,6 +18,7 @@
         ui: {
             coverImage: '.cover-image',
             cover: '.cover',
+            movieItem: '.movie-item',
             bookmarkIcon: '.actions-favorites',
             watchedIcon: '.actions-watched'
         },
@@ -53,8 +54,10 @@
 
             if (watched) {
                 this.ui.watchedIcon.addClass('selected');
+                this.ui.movieItem.parent().addClass('watched');
             } else {
                 this.ui.watchedIcon.removeClass('selected');
+                this.ui.movieItem.parent().removeClass('watched');
             }
             this.ui.coverImage.on('load', _.bind(this.showCover, this));
             // this.showCover();
